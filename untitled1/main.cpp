@@ -7,6 +7,7 @@ int main() {
     cout << "Как тебя зовут?" << endl;
     cin>>Name;
 
+
     int Age;
     cout << "Сколько тебе лет?" << endl;
     cin>>Age;
