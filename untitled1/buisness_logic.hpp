@@ -20,7 +20,7 @@ std::ostream& operator<<(std::ostream& os, PersonInfo const &user_data) {
 }
 
 void clear_stream(std::istream& stream) {
-    if (std::cin) {
+    if (!std::cin) {
         std::cin.clear();
         std::cin.ignore(1000, '\n');
     }
@@ -38,12 +38,12 @@ PersonInfo congratulate() {
       {
           if (!isalpha(c))
           {
-              std::cout << "Неправильный формат имени: можно ввести только буквы,  недопустимый символ: " 
+              std::cout << "Неправильный формат имени: можно ввести только буквы, недопустимый символ: "
                         << c << std::endl;
               continue;
           }
       }
-    } while (std::cin);
+    } while (!std::cin);
 
     int age = 0;
     do
@@ -51,7 +51,7 @@ PersonInfo congratulate() {
         std::cout << "Сколько тебе лет?" << std::endl;
         std::cin >> age;
         clear_stream(std::cin);
-    } while (std::cin);
+    } while (!std::cin);
 
     std::cout << std::endl
             << name << ", поздравляю тебя!" << std::endl
@@ -96,7 +96,7 @@ bool run(std::vector<PersonInfo>& data) {
         }
         break;
     default:
-        std::cerr << "ERROR: invalid menue item id " << menu_item_id;
+        std::cerr << "ERROR: invalid menu item id " << menu_item_id;
         break;
     }
 
