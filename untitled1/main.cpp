@@ -30,7 +30,7 @@ int main()
         // std::const int COLS = 2;
         //}
 
-        // std::ofstream file(NameAges.txt);
+        // std::ofstream file("NameAges.txt");
         // if (!file.is_open()) {
         // std::cout << "Закройте файл. Запись невозможна" << std::endl;
         // return 1
